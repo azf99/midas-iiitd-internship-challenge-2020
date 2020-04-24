@@ -2,8 +2,8 @@ import praw
 import pandas as pd
 import re
 import nltk
-nltk.download("wordnet", quiet=True)
-nltk.download("stopwords", quiet=True)
+nltk.download("wordnet")
+nltk.download("stopwords")
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import pickle
@@ -13,6 +13,18 @@ import warnings
 warnings.filterwarnings("ignore")
 
 def get_posts(urls):
+    
+    '''
+    Takes a list of URLs and fetches all the correspondong posts from REDDIT
+    using the PRAW API
+    
+    Input: URLs
+    Output: Title, Body and Comments of each post
+    
+    Note: IF a single URL is queries, then also extracts the original flair of the post
+            to display as comparison on the results page of the website
+    '''
+    
 
     reddit=praw.Reddit(
                    client_id='wzbeY1mKdm2ynw',
@@ -74,6 +86,10 @@ def rem_emoji(text):
 
 
 def predict(df):
+    
+    '''
+    Takes a dataframe of preprocessed text from the posts and performs prediction on them
+    '''
     
     X = tfidf_vectorizer.transform(df["corpus"])
     

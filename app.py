@@ -16,6 +16,10 @@ def index():
 
 @app.route('/predict', methods = ["POST"])
 def predict():
+    '''
+    Takes the post URL from thee HTML form, at the homepage
+    and sends it for scraping and prediction
+    '''
     
     path = request.form["link"]
     
@@ -30,21 +34,23 @@ def predict():
 
 @app.route('/automated_testing', methods = ["POST"])
 def predict_file():
+    '''
+    Takes the text file from the POST request, processes it and
+    sends all the post URLs for sraping and prediction
+    '''
     
-    for i in request.files:
-        file = request.files[i]
-        
-        urls = file.read()
-        urls = urls.decode("utf-8").split("\n")
-        print(urls)
-        urls = [i.replace("\r", "") for i in urls]
-        print("length: ", len(urls))
-        
-        res = process(urls)
-        
-        print(res)
-                
-        
+    
+    file = request.files["upload_file"]
+    
+    urls = file.read()
+    urls = urls.decode("utf-8").split("\n")
+    #print(urls)
+    urls = [i.replace("\r", "") for i in urls]
+    #print("length: ", len(urls))
+    
+    res, f =  process(urls)
+    
+    #print(res)
     
     return(jsonify(res))
         
