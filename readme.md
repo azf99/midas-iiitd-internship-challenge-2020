@@ -29,7 +29,7 @@ Prequisites:- Python 3 and pip should be installed
 To install:
 1. Clone the repository
 
-2. Go into the cloned repo path and run
+2. Go into the cloned repo path and run:
 	pip3 install -r requirements.txt
  
 3. Go ahead and start the server with:
@@ -77,22 +77,22 @@ Results:
 
               precision    recall  f1-score   support
 
-           0       0.96      1.00      0.98        26
-           1       0.86      0.71      0.78        35
-           2       0.77      0.82      0.79        33
-           3       0.91      0.94      0.93        34
-           4       0.74      0.68      0.71        34
-           5       0.93      0.97      0.95        29
-           6       0.85      0.80      0.83        41
-           7       0.93      0.93      0.93        27
-           8       0.95      0.90      0.93        42
-           9       0.85      0.72      0.78        40
-          10       0.90      0.97      0.94        37
-          11       0.64      0.95      0.76        22
+           0       0.97      0.98      0.97        58
+           1       0.52      0.32      0.39        95
+           2       0.53      0.56      0.54        55
+           3       0.63      0.69      0.66        58
+           4       0.25      0.23      0.24        78
+           5       0.74      0.78      0.76        51
+           6       0.46      0.42      0.44        62
+           7       0.50      0.51      0.50        51
+           8       0.92      0.91      0.92        67
+           9       0.49      0.46      0.48        74
+          10       0.66      0.93      0.77        40
+          11       0.33      0.59      0.42        32
 
-    accuracy                           0.86       400
-    macro avg       0.86      0.87     0.86       400
-    weighted avg    0.86      0.86     0.86       400
+    accuracy                           0.58       721
+    macro avg      0.58      0.62      0.59       721
+    weighted avg   0.58      0.58      0.57       721
 
 Label Meanings:
 0 : AMA
